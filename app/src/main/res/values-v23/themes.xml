@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.ECommerce" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/light_blue</item>
+        <!--        <item name="colorSurface">@color/dark_blue</item>-->
+        <!--        <item name="colorOnSurface">#E40E0E</item>-->
+        <!-- default for: search bar icon and text colors-->
+        <item name="colorOnSurfaceVariant">@color/light_blue</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <!-- status bar text color (supported on API level 23 and above only) -->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">E-Commerce</string>
+    <string name="home_search_hint">What do you search for?</string>
+    <string name="favorites_nav_tab_title">Favorites</string>
+    <string name="home_nav_tab_title">Home</string>
+    <string name="categories_nav_tab_title">Categories</string>
+    <string name="account_nav_tab_title">Account</string>
+    <string name="up_to">UP TO</string>
+    <string name="off">OFF</string>
+    <string name="shop_now">Shop Now</string>
+    <string name="categories">Categories</string>
+    <string name="view_all">view all</string>
+    <string name="home_appliances">Home Appliances</string>
+    <string name="laptops_and_accessories"><![CDATA[Laptops & Accessories]]></string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cart">Cart</string>
+    <string name="total_price">Total price</string>
+    <string name="check_out">Check Out</string>
+    <string name="placeholder_placeholder">PlaceHolder PlaceHolder</string>
+    <string name="your_full_name">Your full name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_password">Your Password</string>
+    <string name="password">**********</string>
+    <string name="your_mobile_number">Your Mobile Number</string>
+    <string name="your_address">Your Address</string>
+    <string name="phone_num">01159732150</string>
+    <string name="masr_el_gdeda_street_9">Masr EL Gdeda,street 9,</string>
+    <string name="_01159732150">01159732150</string>
+    <string name="sign_up">Sign up</string>
+    <string name="g_don_t_have_an_account_sign_up">Don\'t have an account? sign up</string>
+    <string name="g_do_you_have_an_account_sign_in">Do you have an account? sign in</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="password_confirmation">Password Confirmation</string>
+    <string name="welcome_Back_to_route">Welcome Back To Route</string>
+    <string name="user">user</string>
+    <string name="sign_in_with_your_mail">Please sign in with your mail</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="email_address">E-mail address</string>
+</resources>

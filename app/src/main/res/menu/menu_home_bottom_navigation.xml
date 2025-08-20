@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_home_nav_icon"
+        android:title="@string/home_nav_tab_title" />
+
+    <item
+        android:id="@+id/categoriesFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_categories_nav_icon"
+        android:title="@string/categories_nav_tab_title" />
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_favorites_nav_icon"
+        android:title="@string/favorites_nav_tab_title" />
+
+    <item
+        android:id="@+id/accountDetailsFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_account_nav_icon"
+        android:title="@string/account_nav_tab_title" />
+</menu>

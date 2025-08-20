@@ -1,0 +1,87 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ECommerce" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/light_blue</item>
+        <!--        <item name="colorSurface">@color/dark_blue</item>-->
+        <!--        <item name="colorOnSurface">#E40E0E</item>-->
+        <!-- default for: search bar icon and text colors-->
+        <item name="colorOnSurfaceVariant">@color/light_blue</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <!-- status bar text color (supported on API level 23 and above only) -->
+        <!--        <item name="android:windowLightStatusBar">true</item>-->
+    </style>
+
+    <style name="Theme.ECommerce" parent="Base.Theme.ECommerce" />
+
+    <!-- offer view pager item styles -->
+    <!-- text view styles -->
+    <style name="up_to_text">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="for_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="percent_text">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="target_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- shop now button style -->
+    <style name="shop_now_button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- home fragment style -->
+    <!-- category recycler view item style -->
+    <!-- text item style -->
+    <style name="category_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <!-- main titles text style -->
+    <style name="home_titles">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- main text style -->
+    <style name="home_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="Theme.ECommerce.Fullscreen" parent="Theme.ECommerce">
+        <item name="android:actionBarStyle">@style/Widget.Theme.ECommerce.ActionBar.Fullscreen
+        </item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="ThemeOverlay.ECommerce.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+</resources>

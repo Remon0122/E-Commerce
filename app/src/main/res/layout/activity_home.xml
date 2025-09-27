@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activates.home.HomeActivity">
+    tools:context=".ui.activities.home.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,7 +31,8 @@
             app:labelVisibilityMode="unlabeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_nav_host_fragment"
-            app:menu="@menu/menu_home_bottom_navigation" />
+            app:menu="@menu/menu_home_bottom_navigation"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -81,6 +82,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.search.SearchView
+        android:id="@+id/view_all_categories_textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="@string/home_search_hint"

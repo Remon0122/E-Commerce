@@ -18,7 +18,7 @@
         android:name=".application.MyApplication">
 
         <activity
-            android:name=".ui.activates.splash.SplashActivity"
+            android:name=".ui.activities.splash.SplashActivity"
             android:exported="true">
 
             <!-- لازم هنا -->
@@ -29,15 +29,15 @@
         </activity>
 
         <activity
-            android:name=".ui.activates.auth.fragments.AuthActivity"
+            android:name=".ui.activities.auth.AuthActivity"
             android:exported="false" />
 
         <activity
-            android:name=".ui.activates.home.HomeActivity"
+            android:name=".ui.activities.home.HomeActivity"
             android:exported="false" />
 
         <activity
-            android:name=".ui.activates.proudects_details.ProductsDetailsActivity"
+            android:name=".ui.activities.productDetails.ProductsDetailsActivity"
             android:exported="false" />
 
     </application>

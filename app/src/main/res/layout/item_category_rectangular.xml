@@ -8,7 +8,7 @@
 
         <variable
             name="Category"
-            type="com.example.e_commerce.domain.models.Categories.Category" />
+            type="com.example.e_commerce.data.api.model.categories.CategoryDto" />
 
     </data>
 

@@ -1,6 +1,6 @@
 package com.example.e_commerce.domain.di
 
-import com.example.e_commerce.domain.repositories.AuthRepository
+import com.example.e_commerce.domain.repositories.Auth.AuthRepository
 import com.mis.route.e_commerce.data.repositories.auth_repository.AuthRepositoryImpl
 import com.mis.route.e_commerce.data.repositories.auth_repository.datasources.auth_remote_data_source.AuthRemoteDataSource
 import com.mis.route.e_commerce.data.repositories.auth_repository.datasources.auth_remote_data_source.AuthRemoteDataSourceImpl

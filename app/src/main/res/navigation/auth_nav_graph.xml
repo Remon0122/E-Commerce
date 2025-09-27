@@ -4,22 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auth_nav_graph"
     app:startDestination="@id/loginFragment">
+
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.e_commerce.ui.activates.auth.fragments.login.LoginFragment"
+        android:name="com.example.e_commerce.ui.activities.auth.fragments.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
+
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.e_commerce.ui.activates.auth.fragments.regester.RegisterFragment"
+        android:name="com.example.e_commerce.ui.activities.auth.fragments.register.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/fragment_register">
+
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.e_commerce.ui.activities.auth.fragments.forgetPassword.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment" />
+
 </navigation>

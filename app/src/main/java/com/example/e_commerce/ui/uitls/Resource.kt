@@ -1,11 +1,11 @@
 package com.example.e_commerce.ui.uitls
 
-import com.example.e_commerce.domain.utils.AppErrors
 
-sealed class Resource<T> {
-    class LoadingState<E> : Resource<E>()
 
-    class IdleState<E> : Resource<E>()
-    class SuccessState<X>(var data: X? = null) : Resource<X>()
-    class ErrorState<Y>(val error: AppErrors) : Resource<Y>()
+sealed class Resource<out T> {
+    class IdleState<out T> : Resource<T>()
+    class LoadingState<out T> : Resource<T>()
+    data class SuccessState<out T>(val data: T? = null) : Resource<T>()
+    data class ErrorState<out T>(val error: String) : Resource<T>()
 }
+

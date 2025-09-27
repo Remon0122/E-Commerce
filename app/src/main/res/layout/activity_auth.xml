@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activates.auth.AuthActivity">
+    tools:context=".ui.activities.auth.AuthActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/auth_nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="16dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/auth_nav_graph" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

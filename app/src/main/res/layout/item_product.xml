@@ -7,7 +7,7 @@
 
         <variable
             name="product"
-            type="com.example.e_commerce.domain.models.product.Product" />
+            type="com.example.e_commerce.data.api.model.product.Product" />
     </data>
 
     <!--    -->

@@ -7,26 +7,50 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.e_commerce.ui.activates.home.fragment.home.adapter.HomeFragment"
+        android:name="com.example.e_commerce.ui.activities.home.fragment.home.adapter.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_homeFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.example.e_commerce.ui.activates.home.fragment.categories.CategoriesFragment"
+        android:name="com.example.e_commerce.ui.activities.home.fragment.categories.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories">
+
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+    </fragment>
+
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.example.e_commerce.ui.activates.home.fragment.favorites.FavoritesFragment"
+        android:name="com.example.e_commerce.ui.activities.home.fragment.favorites.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
+
     <fragment
         android:id="@+id/accountDetailsFragment"
-        android:name="com.example.e_commerce.ui.activates.home.fragment.account.AccountDetailsFragment"
+        android:name="com.example.e_commerce.ui.activities.home.fragment.account.AccountDetailsFragment"
         android:label="fragment_account_details"
         tools:layout="@layout/fragment_account_details" />
+
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.e_commerce.ui.activities.home.fragment.product.productDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details">
+
+        <argument
+            android:name="productId"
+            app:argType="string" />
+    </fragment>
 </navigation>

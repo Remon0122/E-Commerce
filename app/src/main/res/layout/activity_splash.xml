@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.ECommerce.FullscreenContainer"
-    tools:context=".ui.activates.splash.SplashActivity">
+    tools:context=".ui.activities.splash.SplashActivity">
 
     <!-- The primary full-screen view -->
     <LinearLayout

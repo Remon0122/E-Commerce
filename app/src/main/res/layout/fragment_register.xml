@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.activates.auth.fragments.AuthActivity">
+    tools:context=".ui.activities.auth.fragments.register.RegisterFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_outside"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
-            tools:context=".ui.userAuthentication.fragments.register.RegisterFragment">
+            android:background="@color/blue">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
                 android:gravity="center_horizontal"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteX="-96dp"
-                tools:layout_editor_absoluteY="73dp">
+                android:orientation="vertical">
 
+                <!-- Logo -->
                 <ImageView
                     android:layout_width="350dp"
                     android:layout_height="140dp"
                     android:layout_marginVertical="30dp"
                     android:src="@drawable/logo_white" />
 
+                <!-- Full Name -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -43,22 +40,20 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/user_name_edt"
+                    android:id="@+id/etFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/edit_text_rounded"
-                    android:fontFamily="@font/poppins_regular"
                     android:hint="@string/enter_your_full_name"
-                    android:inputType="text"
+                    android:inputType="textPersonName"
                     android:maxLength="30"
-                    android:maxLines="1"
-                    android:minLines="1"
                     android:padding="18dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_110"
                     android:textSize="14sp" />
 
+                <!-- Phone -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,24 +63,21 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
-
                 <EditText
-                    android:id="@+id/phone_number_edt"
+                    android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/edit_text_rounded"
-                    android:fontFamily="@font/poppins_regular"
                     android:hint="@string/enter_your_mobile_number"
                     android:inputType="phone"
                     android:maxLength="11"
-                    android:maxLines="1"
-                    android:minLines="1"
                     android:padding="18dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_110"
                     android:textSize="14sp" />
 
+                <!-- Email -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,48 +88,44 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/email_edt"
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/edit_text_rounded"
-                    android:fontFamily="@font/poppins_regular"
                     android:hint="@string/enter_your_email"
                     android:inputType="textEmailAddress"
                     android:maxLength="40"
-                    android:maxLines="1"
-                    android:minLines="1"
                     android:padding="18dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_110"
                     android:textSize="14sp" />
 
+                <!-- Password -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="@string/password"
+                    android:text="@string/your_password"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/password_edt"
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/edit_text_rounded"
-                    android:fontFamily="@font/poppins_regular"
                     android:hint="@string/enter_your_password"
                     android:inputType="textPassword"
                     android:maxLength="40"
-                    android:maxLines="1"
-                    android:minLines="1"
                     android:padding="18dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_110"
                     android:textSize="14sp" />
 
+                <!-- Confirm Password -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -148,24 +136,22 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/password_confirmation_edt"
+                    android:id="@+id/etConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/edit_text_rounded"
-                    android:fontFamily="@font/poppins_regular"
                     android:hint="@string/password_confirmation"
                     android:inputType="textPassword"
                     android:maxLength="40"
-                    android:maxLines="1"
-                    android:minLines="1"
                     android:padding="18dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_110"
                     android:textSize="14sp" />
 
+                <!-- Already have account -->
                 <TextView
-                    android:id="@+id/login_do_have_account_tv"
+                    android:id="@+id/tvLoginInstead"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -174,17 +160,17 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
+                <!-- Register Button -->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/register_btn"
+                    android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/edit_text_rounded"
-                    android:hapticFeedbackEnabled="true"
                     android:padding="18dp">
 
                     <TextView
-                        android:id="@+id/btn_tv"
+                        android:id="@+id/tvBtnRegister"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -198,7 +184,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/ic_next"
+                        android:id="@+id/icNext"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="30dp"
@@ -208,17 +194,18 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
-                        android:id="@+id/progress_bar"
+                        android:id="@+id/progressBar"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="30dp"
                         android:indeterminateTint="@color/blue"
-                        android:visibility="invisible"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

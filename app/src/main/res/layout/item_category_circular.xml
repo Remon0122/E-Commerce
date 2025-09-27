@@ -7,7 +7,7 @@
 
         <variable
             name="Category"
-            type="com.example.e_commerce.domain.models.Categories.Category" />
+            type="com.example.e_commerce.domain.models.categories.Category" />
     </data>
 
     <LinearLayout
@@ -42,6 +42,12 @@
             android:background="@color/gray"
             android:textAppearance="@style/category_text"
             tools:text="Women's Fashion" />
-
+        <!-- هنا SubCategories -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subCategoriesRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:listitem="@layout/item_subcategory" />
     </LinearLayout>
 </layout>

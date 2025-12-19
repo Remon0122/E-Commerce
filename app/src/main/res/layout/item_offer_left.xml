@@ -7,7 +7,7 @@
 
         <variable
             name="offer"
-            type="com.example.e_commerce.data.api.model.offer.Offer"/>
+            type="com.example.e_commerce.data.models.offer.Offer" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

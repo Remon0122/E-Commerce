@@ -7,7 +7,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CartActivity : AppCompatActivity() {
-    private var _binding : ActivityCartBinding ?= null
+    private var _binding: ActivityCartBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {

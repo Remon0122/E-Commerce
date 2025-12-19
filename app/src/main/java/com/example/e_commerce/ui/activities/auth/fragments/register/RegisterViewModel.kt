@@ -4,9 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.e_commerce.domain.UseCases.RegisterUseCase
+import com.example.e_commerce.data.models.request.RegisterRequest
+import com.example.e_commerce.domain.usecases.RegisterUseCase
 import com.example.e_commerce.domain.utils.ApiResult
-import com.example.e_commerce.ui.uitls.RegisterState
+import com.example.e_commerce.domain.utils.AppErrors
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,25 +17,49 @@ class RegisterViewModel @Inject constructor(
     private val registerUseCase: RegisterUseCase
 ) : ViewModel() {
 
-    private val _registerState = MutableLiveData<RegisterState>()
-    val registerState: LiveData<RegisterState> = _registerState
+    val nameLiveData = MutableLiveData<String>("")
+    val emailLiveData = MutableLiveData<String>("")
+    val phoneLiveData = MutableLiveData<String>("")
+    val passwordLiveData = MutableLiveData<String>("")
+    val confirmPasswordLiveData = MutableLiveData<String>("")
 
-    fun register(name: String, phone: String, email: String, password: String) {
+    private val _registerState = MutableLiveData<ApiResult<Unit>>()
+    val registerState: LiveData<ApiResult<Unit>> = _registerState
+
+    fun register() {
+        val name = nameLiveData.value.orEmpty()
+        val email = emailLiveData.value.orEmpty()
+        val phone = phoneLiveData.value.orEmpty()
+        val password = passwordLiveData.value.orEmpty()
+        val confirmPassword = confirmPasswordLiveData.value.orEmpty()
+
+
+        if (name.isBlank() || email.isBlank() || phone.isBlank()
+            || password.isBlank() || confirmPassword.isBlank()
+        ) {
+            _registerState.value =
+                ApiResult.ErrorApiResult(AppErrors.ValidationError("All fields are required"))
+            return
+        }
+
+        if (password != confirmPassword) {
+            _registerState.value =
+                ApiResult.ErrorApiResult(AppErrors.ValidationError("Passwords do not match"))
+            return
+        }
+
+        val request = RegisterRequest(
+            name = name,
+            email = email,
+            phone = phone,
+            password = password,
+            rePassword = confirmPassword
+        )
+
         viewModelScope.launch {
-            _registerState.value = RegisterState.Loading
-            try {
-                when (val result = registerUseCase(name, phone, email, password)) {
-                    is ApiResult.SuccessApiResult -> _registerState.value = RegisterState.Success
-                    is ApiResult.ErrorApiResult -> _registerState.value =
-                        RegisterState.Error(result.error ?: "Registration failed")
-                }
-            } catch (e: Exception) {
-                _registerState.value = RegisterState.Error(e.message ?: "Unknown Error")
-            }
+            _registerState.value = ApiResult.Loading()
+            _registerState.value = registerUseCase.execute(request)
         }
     }
 }
-
-
-
 

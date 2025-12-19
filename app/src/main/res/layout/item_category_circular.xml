@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="Category"
-            type="com.example.e_commerce.domain.models.categories.Category" />
+            name="category"
+            type="com.example.e_commerce.data.models.categort.Category" />
     </data>
 
     <LinearLayout
@@ -26,7 +26,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
-                app:imageFromUrl="@{Category.image}"
+                app:imageFromUrl="@{category.image}"
                 android:background="@color/gray"
                 tools:src="@drawable/image_men_category" />
 
@@ -38,16 +38,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="@{Category.name}"
+            android:text="@{category.name}"
             android:background="@color/gray"
             android:textAppearance="@style/category_text"
             tools:text="Women's Fashion" />
-        <!-- هنا SubCategories -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/subCategoriesRv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            tools:listitem="@layout/item_subcategory" />
+
     </LinearLayout>
 </layout>

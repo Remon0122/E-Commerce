@@ -1,46 +1,46 @@
 package com.example.e_commerce.ui.activities.auth.fragments.login
 
-import android.util.Log
+
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.e_commerce.data.api.model.response.TokenResponse
-import com.example.e_commerce.domain.UseCases.LoginUseCase
+import com.example.e_commerce.domain.usecases.LoginUseCase
 import com.example.e_commerce.domain.utils.ApiResult
-import com.example.e_commerce.ui.uitls.Resource
+import com.example.e_commerce.domain.utils.AppErrors
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase
 ) : ViewModel() {
 
-    val loginApiState = MutableLiveData<Resource<TokenResponse>>(Resource.IdleState())
-    var emailLiveData = MutableLiveData("")
-    var passwordLiveData = MutableLiveData("")
-    val emailError = MutableLiveData<String?>()
-    val passwordError = MutableLiveData<String?>()
+    val emailLiveData = MutableLiveData<String>("")
+    val passwordLiveData = MutableLiveData<String>("")
+
+    val emailError = MutableLiveData<String>("")
+    val passwordError = MutableLiveData<String>("")
+    private val _loginState = MutableLiveData<ApiResult<Unit>>()
+    val loginState: LiveData<ApiResult<Unit>> = _loginState
 
     fun login() {
-        Log.e("LoginViewModel", "login click")
-        viewModelScope.launch {
-            when (val result = loginUseCase.execute(
-                emailLiveData.value!!,
-                passwordLiveData.value!!
-            )) {
-                is ApiResult.ErrorApiResult -> {
-                    Log.e("LoginViewModel", "ErrorApiResult -> ${result.error}")
-                    loginApiState.postValue(Resource.ErrorState(result.error!!))
-                }
+        val email = emailLiveData.value.orEmpty()
+        val password = passwordLiveData.value.orEmpty()
 
-                is ApiResult.SuccessApiResult -> {
-                    Log.e("LoginViewModel", "SuccessApiResult -> ${result.data}")
-                    loginApiState.postValue(Resource.SuccessState(result.data!!))
-                }
-            }
+        if (email.isBlank() || password.isBlank()) {
+            _loginState.value = ApiResult.ErrorApiResult(
+                AppErrors.NetworkError("Please enter email and password")
+            )
+            return
+        }
+
+        viewModelScope.launch {
+            _loginState.value = ApiResult.Loading()
+            _loginState.value = loginUseCase.execute(email, password)
         }
     }
 }
+
+

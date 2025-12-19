@@ -1,9 +1,11 @@
 package com.example.e_commerce.domain.utils
 
-sealed class ApiResult<T>(
-    val data: T? = null,
-    val error: String? = null
-) {
-    class SuccessApiResult<T>(data: T) : ApiResult<T>(data)
-    class ErrorApiResult<T>(error: String) : ApiResult<T>(null, error)
+sealed class ApiResult<T>(var data: T? = null) {
+
+    class SuccessApiResult<T>(data: T? = null) : ApiResult<T>(data)
+    class ErrorApiResult<T>(var error: AppErrors) : ApiResult<T>(null)
+
+
+    class Loading<T> : ApiResult<T>()
+    class Idle<T> : ApiResult<T>()
 }

@@ -10,16 +10,16 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.WindowInsets
 import androidx.appcompat.app.AppCompatActivity
+import com.example.e_commerce.ui.activities.home.fragments.HomeActivity
 import com.example.e_commerce.databinding.ActivitySplashBinding
 import com.example.e_commerce.ui.activities.auth.AuthActivity
-import com.example.e_commerce.ui.activities.home.HomeActivity
-import com.example.e_commerce.ui.uitls.PrefsManager
+import com.mis.route.e_commerce.ui.utils.PrefsHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
-    private var _binding: ActivitySplashBinding? = null
+    private var _binding: ActivitySplashBinding ? = null
     private val binding get() = _binding!!
     private val hideHandler = Handler(Looper.myLooper()!!)
 
@@ -93,20 +93,16 @@ class SplashActivity : AppCompatActivity() {
         // while interacting with the UI.
         binding.dummyButton.setOnTouchListener(delayHideTouchListener)
     }
-
     private fun navigateToAuth() {
         Handler(mainLooper).postDelayed({
-            if (PrefsManager.shouldSkipLogin(this)) {
-                // 🟢 لسه عامل Login في آخر 30 يوم → روح HomeActivity
+            if (PrefsHelper.shouldSkipLogin(this)) {
                 startActivity(Intent(this, HomeActivity::class.java))
             } else {
-                // 🔴 عدى 30 يوم أو لسه أول مرة → روح AuthActivity
                 startActivity(Intent(this, AuthActivity::class.java))
             }
             finish()
         }, 2000)
     }
-
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         // Trigger the initial hide() shortly after the activity has been

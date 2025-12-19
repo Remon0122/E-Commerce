@@ -1,10 +1,7 @@
 package com.example.e_commerce.domain.di
 
 import android.content.Context
-import androidx.room.Room
-import com.example.e_commerce.data.RDB.AppDatabase
-import com.example.e_commerce.data.RDB.DAO.AccountDao
-import com.example.e_commerce.data.api.web_services.ApiServices
+import com.example.e_commerce.data.api.web_services.WebServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,14 +11,13 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
     @Provides
-    fun provideWebServices(retrofit: Retrofit): ApiServices {
-        return retrofit.create(ApiServices::class.java)
+    fun provideWebServices(retrofit: Retrofit): WebServices {
+        return retrofit.create(WebServices::class.java)
     }
 
     @Provides
@@ -54,16 +50,4 @@ object NetworkModule {
     fun provideConnectivityChecker(@ApplicationContext context: Context): ConnectivityChecker {
         return ConnectivityChecker(context)
     }
-    @Provides
-    @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
-        return Room.databaseBuilder(
-            context,
-            AppDatabase::class.java,
-            "ecommerce_db"
-        ).build()
-    }
-
-    @Provides
-    fun provideAccountDao(db: AppDatabase): AccountDao = db.accountDao()
 }

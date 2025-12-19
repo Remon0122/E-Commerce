@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="Category"
-            type="com.example.e_commerce.data.api.model.categories.CategoryDto" />
+            name="category"
+            type="com.example.e_commerce.data.models.brand.Brand" />
 
     </data>
 
@@ -45,7 +45,7 @@
                 android:gravity="start|center_vertical"
                 android:paddingStart="5dp"
                 android:paddingEnd="0dp"
-                android:text="@{Category.name}"
+                android:text="@{category.name}"
                 android:textColor="@color/light_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/dragging_bar"

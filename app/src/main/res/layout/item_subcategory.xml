@@ -7,7 +7,7 @@
 
         <variable
             name="sub_category"
-            type="com.example.e_commerce.data.api.model.subCategories.SubCategory" />
+            type="com.example.e_commerce.data.models.subcategory.SubCategory" />
 
     </data>
 

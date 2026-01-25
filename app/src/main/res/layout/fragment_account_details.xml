@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8" ?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.e_commerce.ui.activities.auth.AuthActivity">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    >
+    <data>
+        <variable
+            name="proudact"
+            type="com.mis.route.e_commerce.ui.activities.product_details.ProductDetailsActivity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Account Details Fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

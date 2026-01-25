@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.e_commerce.ui.activities.auth.fragments.login.LoginFragment"
+        android:name="com.mis.route.e_commerce.ui.activities.auth.fragments.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.e_commerce.ui.activities.auth.fragments.registe.RegisterFragment"
+        android:name="com.mis.route.e_commerce.ui.activities.auth.fragments.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action

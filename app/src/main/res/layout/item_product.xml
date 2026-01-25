@@ -7,7 +7,7 @@
 
         <variable
             name="product"
-            type="com.example.e_commerce.data.models.product.Product" />
+            type="com.mis.route.e_commerce.domain.model.product.Product" />
     </data>
 
     <!--    -->
@@ -29,9 +29,18 @@
                 android:scaleType="centerCrop"
                 app:imageFromUrl="@{product.imageCover}"
                 tools:src="@drawable/image_home_appliance_1" />
-
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{product.title}"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@id/product_cover"
+                app:layout_constraintStart_toStartOf="@+id/product_cover"
+                app:layout_constraintEnd_toEndOf="@+id/product_cover"
+                />
             <ImageView
-                android:id="@+id/add_to_favorites"
+                android:id="@+id/addToFavorites"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

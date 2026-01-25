@@ -7,7 +7,7 @@
 
         <variable
             name="sub_category"
-            type="com.example.e_commerce.data.models.subcategory.SubCategory" />
+            type="com.mis.route.e_commerce.domain.model.category.Category" />
 
     </data>
 
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/image_men_category" />
+                android:src="@drawable/image_men_category" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -45,6 +45,8 @@
             android:text="@{sub_category.name}"
             android:textColor="@color/light_blue"
             android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

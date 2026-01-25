@@ -1,23 +1,30 @@
-@file:Suppress("DEPRECATION")
+import Deps.androidx
+import Deps.glide
+import Deps.hilt
+import Deps.navigation
+import Deps.network
+import Deps.testDependencies
 
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    id("com.google.dagger.hilt.android")
-    alias(libs.plugins.androidx.navigation.safeargs)
-    kotlin("kapt")
+    id(plugin.BuildPlugins.ANDROID_APP)
+    id(plugin.BuildPlugins.KOTLIN_ANDROID)
+    id(plugin.BuildPlugins.KSP)
+    id(plugin.BuildPlugins.KAPT)
+    id(plugin.BuildPlugins.HILT)
+    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.example.e_commerce"
-    compileSdk = 36
+    namespace = Build.BuildConfig.APP_NAME
+    compileSdk = Build.BuildConfig.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.example.e_commerce"
-        minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Build.BuildConfig.APP_NAME
+        minSdk = Build.BuildConfig.MIN_SDK
+        targetSdk = Build.BuildConfig.TARGET_SDK_VERSION
+        versionCode = Release.ReleaseConfig.VERSION_CODE
+        versionName = Release.ReleaseConfig.VERSION_NAME
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,12 +39,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
+        jvmTarget = "17"
     }
 
     buildFeatures {
@@ -47,48 +54,30 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-
-    // Tests
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
-    // Hilt
-    implementation("com.google.dagger:hilt-android:2.57.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.57.1")
-    implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
-    // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.6")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
-    kapt("androidx.lifecycle:lifecycle-compiler:2.8.6")
-
-    // Retrofit + OkHttp
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:5.1.0"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
-
-    // Shimmer Facebook
-    implementation("com.facebook.shimmer:shimmer:0.5.0")
-
+    implementation("androidx.navigation:navigation-fragment-ktx:2.9.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.9.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.9.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.9.5")
+    implementation("androidx.camera:camera-camera2-pipe:1.6.0-alpha01")
+    // android
+    androidx()
+    // Navigation Component
+    navigation()
+    // testDeps
+    testDependencies()
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
     // Glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-
-    // Room Database
-    implementation("androidx.room:room-runtime:2.7.2")
-    implementation("androidx.room:room-ktx:2.7.2")
-    kapt("androidx.room:room-compiler:2.7.2")
+    glide()
+    // Shimmer
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+    // MVVM
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.9.2")
+    // Hilt
+    hilt()
+    // AllNetwork Case
+    network()
 
     implementation("androidx.security:security-crypto:1.1.0-alpha04")
 }

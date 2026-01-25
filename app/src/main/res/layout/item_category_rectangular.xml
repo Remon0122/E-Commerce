@@ -5,10 +5,14 @@
     android:background="@android:color/transparent">
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="category"
-            type="com.example.e_commerce.data.models.brand.Brand" />
+            type="com.mis.route.e_commerce.domain.model.category.Category" />
+        
+        <variable
+            name="IsSelected"
+            type="Boolean" />
 
     </data>
 
@@ -22,7 +26,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/rv_bg"
+            android:background="@{IsSelected ? @color/white : @color/rv_bg}"
             android:paddingStart="10dp"
             android:paddingTop="5dp"
             android:paddingEnd="0dp"
@@ -32,6 +36,7 @@
                 android:id="@+id/dragging_bar"
                 android:layout_width="7dp"
                 android:layout_height="0dp"
+                android:visibility="@{IsSelected ? View.VISIBLE: View.GONE}"
                 android:src="@drawable/shape_selected_category_bar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.e_commerce.ui.activities.cart.CartActivity">
+    tools:context=".ui.activities.home.fragments.categories.CategoriesFragment">
 
     <data>
 

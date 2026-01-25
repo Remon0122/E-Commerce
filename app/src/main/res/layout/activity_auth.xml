@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.e_commerce.ui.activities.auth.AuthActivity">
+    tools:context=".ui.activities.auth.AuthActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/auth_nav_host_fragment"
@@ -15,5 +15,10 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/auth_nav_graph" />
 
+
+    <WebView
+        android:id="@+id/Web_View"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

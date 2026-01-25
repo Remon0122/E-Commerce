@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.e_commerce.ui.activities.auth.fragments.register.RegisterViewModel" />
+            type="com.mis.route.e_commerce.ui.activities.auth.fragments.register.RegisterViewModel" />
     </data>
 
 <FrameLayout 

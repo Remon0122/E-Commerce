@@ -1,0 +1,6 @@
+package com.mis.route.e_commerce.domain.utils
+
+object Constants {
+    const val NETWORK_ERROR_MESSAGE = "Please check your internet connection, And try again later"
+    const val DEFAULT_ERROR_MASSAGE = "something want wrong , please try again later "
+}
